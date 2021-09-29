@@ -3,17 +3,25 @@
 %%%%% ANSWER
 \usepackage{ifthen}
 \usepackage{wasysym}
+\usepackage{textcomp}
 \newcommand{\goodanswer}{$\XBox$~}
 \newcommand{\badanswer}{$\Box$~}
+\newcommand{\goodanswerO}{{\Large\textbullet}}
+\newcommand{\badanswerO}{{\Large\textopenbullet}}
 
 \newcommand{\answer}[2][]{%
   \ifthenelse{\lengthtest{#1 pt > 0.0pt}}
     {\leavevmode\newline \noindent \goodanswer #2 \hfill (${#1} \%$)}
     {\leavevmode\newline \noindent \badanswer #2 \hfill (${#1} \%$)}
 }
+\newcommand{\answerO}[2][]{%
+  \ifthenelse{\lengthtest{#1 pt > 0.0pt}}
+    {\leavevmode\newline \noindent \goodanswerO #2 \hfill (${#1} \%$)}
+    {\leavevmode\newline \noindent \badanswerO #2 \hfill (${#1} \%$)}
+}
 
 %%%%% CATEGORY
-\newenvironment{category}[1][]{ \newpage \section{Catégorie: #1}   }{\bigskip}
+\newenvironment{category}[1][]{ \newpage \section{Category: #1}   }{\bigskip}
 
 \newcommand{\name}[1]{}
 \renewcommand{\description}[1]{}
